@@ -1,9 +1,19 @@
 const fs = require('fs')
 const fsPromises = fs.promises
-const conf = require('../conf')
+const vars = require('../vars')
 
-const CSS_DIST = `${conf.DIST}${conf.CSS_DIST}`
-const JS_DIST = `${conf.DIST}${conf.JS_DIST}`
+const CSS_DIST = `${vars.DIST}${vars.CSS_DIST}`
+const JS_DIST = `${vars.DIST}${vars.JS_DIST}`
+
+let JS_LINK
+let CSS_LINK
+if (process.env.NODE_ENV === 'production') {
+  JS_LINK = vars.JS_LINK_PROD
+  CSS_LINK = vars.CSS_LINK_PROD
+} else {
+  JS_LINK = vars.JS_LINK_DEV
+  CSS_LINK = vars.CSS_LINK_DEV
+}
 
 async function getFileList (dir) {
   let files
@@ -27,8 +37,8 @@ async function addJsTemplate () {
     let link = ''
     files.forEach(async (fileName) => {
       if (fileName.includes('jquery') || fileName.includes('main')) {
-        link += conf.JS_LINK.replace('%_file_%', fileName) + '\n'
-        await fsPromises.writeFile(`${JS_DIST}main.html`, link)
+        link += JS_LINK.replace('%_file_%', fileName) + '\n'
+        await fsPromises.writeFile(`${JS_DIST}mainjs.html`, link)
       } else {
         let tmplName
         if (fileName.includes('-')) {
@@ -36,7 +46,7 @@ async function addJsTemplate () {
         } else {
           tmplName = fileName.split('.')[0]
         }
-        link = conf.JS_LINK.replace('%_file_%', fileName)
+        link = JS_LINK.replace('%_file_%', fileName)
         await fsPromises.writeFile(`${JS_DIST}${tmplName}.html`, link)
       }
     })
@@ -51,8 +61,8 @@ async function addCssTemplate () {
     let link = ''
     files.forEach(async (fileName) => {
       if (fileName.includes('main')) {
-        link += conf.CSS_LINK.replace('%_file_%', fileName) + '\n'
-        await fsPromises.writeFile(`${CSS_DIST}main.html`, link)
+        link += CSS_LINK.replace('%_file_%', fileName) + '\n'
+        await fsPromises.writeFile(`${CSS_DIST}maincss.html`, link)
       } else {
         let tmplName
         if (fileName.includes('-')) {
@@ -60,7 +70,7 @@ async function addCssTemplate () {
         } else {
           tmplName = fileName.split('.')[0]
         }
-        link = conf.CSS_LINK.replace('%_file_%', fileName)
+        link = CSS_LINK.replace('%_file_%', fileName)
         await fsPromises.writeFile(`${CSS_DIST}${tmplName}.html`, link)
       }
     })
