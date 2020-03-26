@@ -25,5 +25,6 @@ mod.wizards.newContentElement.wizardItems.static.elements {
   button.tt_content_defValues.CType = button
   socialIcons.tt_content_defValues.CType = socialIcons
   fullWidthImage.tt_content_defValues.CType = fullWidthImage
+  slider.tt_content_defValues.CType = slider
 
 }

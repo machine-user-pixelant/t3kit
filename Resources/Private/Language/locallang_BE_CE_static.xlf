@@ -328,7 +328,52 @@
 				<source>Include 2x images in sources</source>
 			</trans-unit>
 
-
+			<!--Slider Element-->
+			<trans-unit id="slider.title">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="slider.description">
+				<source>Slider with image and optional text and link</source>
+			</trans-unit>
+			<trans-unit id="slider.tabs">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="slider.palette.setting">
+				<source>Setting of slider</source>
+			</trans-unit>
+			<trans-unit id="slider.autoplay">
+				<source>Slider autoplay</source>
+			</trans-unit>
+			<trans-unit id="slider.autoplay.speed">
+				<source>Slider autoplay speed (milliseconds)</source>
+			</trans-unit>
+			<trans-unit id="slider.height">
+				<source>Slider height (px)</source>
+			</trans-unit>
+			<trans-unit id="slider.sliderItem">
+				<source>Slider items</source>
+			</trans-unit>
+			<trans-unit id="sliderItem">
+				<source>test</source>
+			</trans-unit>
+			<trans-unit id="sliderItem.title">
+				<source>Slider item</source>
+			</trans-unit>
+			<trans-unit id="sliderItem.header">
+				<source>Slider header</source>
+			</trans-unit>
+			<trans-unit id="sliderItem.text">
+				<source>Slider text</source>
+			</trans-unit>
+			<trans-unit id="sliderItem.link">
+				<source>Slider link</source>
+			</trans-unit>
+			<trans-unit id="sliderItem.link.text">
+				<source>Slider link</source>
+			</trans-unit>
+			<trans-unit id="slider.item.image">
+				<source>Slider image</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -1,0 +1,35 @@
+tt_content {
+    slider =< lib.contentElement
+    slider {
+        templateName = Slider
+        dataProcessing {
+            20 = T3k\t3kit\DataProcessing\FlexFormProcessor
+            20 {
+                fieldName = pi_flexform
+                as = settings
+            }
+            90 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            90 {
+                table = tx_t3kit_slider_item
+                pidInList.field = pid
+                as = sliderItem
+                where {
+                    data = field:uid
+                    intval = 1
+                    wrap = tt_content=|
+                }
+                orderBy = sorting
+                dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    10 {
+                        references.fieldName = image
+                        as = image
+                    }
+                }
+            }
+            # "inherit" from lib.fluidContent
+            800 < lib.contentElement.dataProcessing.800
+            830 < lib.contentElement.dataProcessing.830
+        }
+    }
+}
