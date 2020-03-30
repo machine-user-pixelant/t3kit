@@ -2,7 +2,9 @@
 # Table structure for table 'pages'
 #
 CREATE TABLE pages (
-	nav_icon int(11) unsigned DEFAULT '0' NOT NULL,
+	nav_icon_source varchar(255) DEFAULT '' NOT NULL,
+	nav_icon_class varchar(255) DEFAULT '' NOT NULL,
+	nav_icon varchar(255) DEFAULT '' NOT NULL,
 	nav_image int(11) unsigned DEFAULT '0' NOT NULL,
 );
 
@@ -78,7 +80,11 @@ CREATE TABLE tt_content (
 	author_name varchar(255) DEFAULT '' NOT NULL,
 	work_title varchar(255) DEFAULT '' NOT NULL,
 
-  slider_autoplay int(11) unsigned DEFAULT '0' NOT NULL,
+	icon_source varchar(255) DEFAULT '' NOT NULL,
+	icon_class varchar(255) DEFAULT '' NOT NULL,
+	icon varchar(255) DEFAULT '' NOT NULL,
+
+	slider_autoplay int(11) unsigned DEFAULT '0' NOT NULL,
 	slider_autoplay_speed varchar(255) DEFAULT '' NOT NULL,
 	slider_height varchar(255) DEFAULT '' NOT NULL,
 	tx_t3kit_slider_item int(11) DEFAULT '0' NOT NULL,
@@ -88,44 +94,54 @@ CREATE TABLE tt_content (
 # Table structure for table 'tx_t3kit_slider_item'
 #
 CREATE TABLE tx_t3kit_slider_item (
-    uid int(11) unsigned NOT NULL auto_increment,
-    pid int(11) DEFAULT '0' NOT NULL,
+	uid int(11) unsigned NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
 
-    tt_content int(11) unsigned DEFAULT '0',
-    header varchar(255) DEFAULT '' NOT NULL,
-    bodytext text,
-		link varchar(1024) DEFAULT '' NOT NULL,
-		image int(11) unsigned DEFAULT '0',
-		linktext varchar(1024) DEFAULT '' NOT NULL,
-		checkbox_2 int(11) unsigned DEFAULT '0',
+	tt_content int(11) unsigned DEFAULT '0',
+	header varchar(255) DEFAULT '' NOT NULL,
+	bodytext text,
+	link varchar(1024) DEFAULT '' NOT NULL,
+	image int(11) unsigned DEFAULT '0',
+	linktext varchar(1024) DEFAULT '' NOT NULL,
+	checkbox_2 int(11) unsigned DEFAULT '0',
 
 
-    tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-    crdate int(11) unsigned DEFAULT '0' NOT NULL,
-    cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
-    deleted smallint unsigned DEFAULT '0' NOT NULL,
-    hidden smallint unsigned DEFAULT '0' NOT NULL,
-    starttime int(11) unsigned DEFAULT '0' NOT NULL,
-    endtime int(11) unsigned DEFAULT '0' NOT NULL,
-    sorting int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
+	crdate int(11) unsigned DEFAULT '0' NOT NULL,
+	cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
+	deleted smallint unsigned DEFAULT '0' NOT NULL,
+	hidden smallint unsigned DEFAULT '0' NOT NULL,
+	starttime int(11) unsigned DEFAULT '0' NOT NULL,
+	endtime int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) DEFAULT '0' NOT NULL,
 
-    sys_language_uid int(11) DEFAULT '0' NOT NULL,
-    l10n_parent int(11) unsigned DEFAULT '0' NOT NULL,
-    l10n_diffsource mediumblob NULL,
+	sys_language_uid int(11) DEFAULT '0' NOT NULL,
+	l10n_parent int(11) unsigned DEFAULT '0' NOT NULL,
+	l10n_diffsource mediumblob NULL,
 
-    t3ver_oid int(11) unsigned DEFAULT '0' NOT NULL,
-    t3ver_id int(11) unsigned DEFAULT '0' NOT NULL,
-    t3ver_wsid int(11) unsigned DEFAULT '0' NOT NULL,
-    t3ver_label varchar(255) DEFAULT '' NOT NULL,
-    t3ver_state smallint DEFAULT '0' NOT NULL,
-    t3ver_stage int(11) DEFAULT '0' NOT NULL,
-    t3ver_count int(11) unsigned DEFAULT '0' NOT NULL,
-    t3ver_tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-    t3ver_move_id int(11) unsigned DEFAULT '0' NOT NULL,
-    t3_origuid int(11) unsigned DEFAULT '0' NOT NULL,
+	t3ver_oid int(11) unsigned DEFAULT '0' NOT NULL,
+	t3ver_id int(11) unsigned DEFAULT '0' NOT NULL,
+	t3ver_wsid int(11) unsigned DEFAULT '0' NOT NULL,
+	t3ver_label varchar(255) DEFAULT '' NOT NULL,
+	t3ver_state smallint DEFAULT '0' NOT NULL,
+	t3ver_stage int(11) DEFAULT '0' NOT NULL,
+	t3ver_count int(11) unsigned DEFAULT '0' NOT NULL,
+	t3ver_tstamp int(11) unsigned DEFAULT '0' NOT NULL,
+	t3ver_move_id int(11) unsigned DEFAULT '0' NOT NULL,
+	t3_origuid int(11) unsigned DEFAULT '0' NOT NULL,
 
-    PRIMARY KEY (uid),
-    KEY parent (pid),
-    KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-    KEY language (l10n_parent,sys_language_uid)
+	PRIMARY KEY (uid),
+	KEY parent (pid),
+	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
+	KEY language (l10n_parent,sys_language_uid)
+):
+
+#
+# Table structure for table 'sys_file_reference'
+#
+CREATE TABLE sys_file_reference (
+	description_align varchar(255) DEFAULT '' NOT NULL,
+	picture_width varchar(255) DEFAULT '' NOT NULL,
+	picture_border_radius varchar(255) DEFAULT '' NOT NULL,
+	img_thumbnail tinyint(3) unsigned DEFAULT '0' NOT NULL,
 );
