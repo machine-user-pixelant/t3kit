@@ -353,11 +353,11 @@
 			<trans-unit id="slider.sliderItem">
 				<source>Slider items</source>
 			</trans-unit>
-			<trans-unit id="sliderItem">
-				<source>test</source>
+			<trans-unit id="sliderItem.item">
+				<source>Slider items2</source>
 			</trans-unit>
 			<trans-unit id="sliderItem.title">
-				<source>Slider item</source>
+				<source>Slider items3</source>
 			</trans-unit>
 			<trans-unit id="sliderItem.header">
 				<source>Slider header</source>
@@ -371,7 +371,7 @@
 			<trans-unit id="sliderItem.link.text">
 				<source>Slider link</source>
 			</trans-unit>
-			<trans-unit id="slider.item.image">
+			<trans-unit id="sliderItem.image">
 				<source>Slider image</source>
 			</trans-unit>
 		</body>

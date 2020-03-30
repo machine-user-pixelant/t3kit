@@ -15,11 +15,11 @@ if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('lang')) {
 
 return [
     'ctrl' => [
-        'label' => 'header',
+        'label' => 'a',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'title' => 'LLL:EXT:t3kit/Resources/Private/Language/locallang_BE_CE_static.xlf:sliderItem.title',
+        'title' => 'a',
         'delete' => 'deleted',
         'versioningWS' => true,
         'origUid' => 't3_origuid',
@@ -210,7 +210,7 @@ return [
         ],
         'link' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:t3kit/Resources/Private/Language/locallang_BE_CE_static.xlf:slideItem.link',
+            'label' => 'LLL:EXT:t3kit/Resources/Private/Language/locallang_BE_CE_static.xlf:sliderItem.link',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputLink',
@@ -221,7 +221,7 @@ return [
                     'linkPopup' => [
                         'options' => [
                             'title' =>
-                            'LLL:EXT:t3kit/Resources/Private/Language/locallang_BE_CE_static.xlf.xlf:slideItem.link',
+                            'LLL:EXT:t3kit/Resources/Private/Language/locallang_BE_CE_static.xlf.xlf:sliderItem.link',
                         ],
                     ],
                 ],
@@ -230,7 +230,7 @@ return [
         ],
         'linktext' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:t3kit/Resources/Private/Language/locallang_BE_CE_static.xlf:slideItem.link.text',
+            'label' => 'LLL:EXT:t3kit/Resources/Private/Language/locallang_BE_CE_static.xlf:sliderItem.link.text',
             'config' => [
                 'type' => 'input',
                 'size' => 50,

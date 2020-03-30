@@ -82,8 +82,6 @@ CREATE TABLE tt_content (
 	slider_autoplay_speed varchar(255) DEFAULT '' NOT NULL,
 	slider_height varchar(255) DEFAULT '' NOT NULL,
 	tx_t3kit_slider_item int(11) DEFAULT '0' NOT NULL,
-
-
 );
 
 #
@@ -96,7 +94,11 @@ CREATE TABLE tx_t3kit_slider_item (
     tt_content int(11) unsigned DEFAULT '0',
     header varchar(255) DEFAULT '' NOT NULL,
     bodytext text,
-    telephone varchar(255) DEFAULT '' NOT NULL,
+		link varchar(1024) DEFAULT '' NOT NULL,
+		image int(11) unsigned DEFAULT '0',
+		linktext varchar(1024) DEFAULT '' NOT NULL,
+		checkbox_2 int(11) unsigned DEFAULT '0',
+
 
     tstamp int(11) unsigned DEFAULT '0' NOT NULL,
     crdate int(11) unsigned DEFAULT '0' NOT NULL,
