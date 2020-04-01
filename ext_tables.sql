@@ -134,7 +134,7 @@ CREATE TABLE tx_t3kit_slider_item (
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
 	KEY language (l10n_parent,sys_language_uid)
-):
+);
 
 #
 # Table structure for table 'sys_file_reference'
