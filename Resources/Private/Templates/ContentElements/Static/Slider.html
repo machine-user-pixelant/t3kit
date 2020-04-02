@@ -5,6 +5,49 @@
   <!-- theme_t3kit: Templates/ContentElements/Slider.html [begin] -->
   Slider should be here
   <f:debug>{_all}</f:debug>
+  <f:if condition="{sliderItem}">
+		<div class="img-slider swiper-container js__img-slider" data-autoplay="{f:if(condition: '{settings.autoplay} > 0', then: settings.autoplay)}">
+			<div class="swiper-wrapper img-slider__wrp">
+				<f:for each="{sliderItem.data}" as="slider" iteration="slideIteration">
+					<div class="swiper-slide img-slider__slide {settings.appearance.{slider.referenceProperties.tx_themet3kit_slide_appearance}}">
+            <f:comment></f:comment>
+            <f:debug>{slider}</f:debug>
+							<div class="swiper-lazy-preloader"></div>
+							<div class="img-slider__caption {f:if(condition: '{settings.captionAlign} == 0', then: '_left-align')}{f:if(condition: '{settings.captionAlign} == 1', then: '_center-align')}{f:if(condition: '{settings.captionAlign} == 2', then: '_right-align')}">
+								<f:if condition="{slider.referenceProperties.alternative}">
+									<h3 class="img-slider__caption-sub-header">{slider.data.header}</h3>
+								</f:if>
+								<f:if condition="{slider.referenceProperties.title}">
+									<f:if condition="{slideIteration.cycle} == 1 && {settings.useSlideOneHeaderAsPageHeader}">
+										<f:then>
+											<h1 class="img-slider__caption-header">{slider.data.header}</h1>
+										</f:then>
+										<f:else>
+											<h2 class="img-slider__caption-header">{slider.data.header}</h2>
+										</f:else>
+									</f:if>
+								</f:if>
+								<f:if condition="{slider.data.text}">
+									<p class="img-slider__caption-p js__img-slider__caption-p">{slider.data.text}</p>
+								</f:if>
+								<f:if condition="{slider.data.link}">
+										<f:link.typolink parameter="{slider.data.link}" class="img-slider__caption-link">{slider.data.linktext}</f:link.typolink>
+								</f:if>
+                <f:comment><!-- </div> --></f:comment>
+						</div>
+					</div>
+				</f:for>
+			</div>
+			<f:comment><!-- If there are more than one image --></f:comment>
+			<f:if condition="{slides->f:count()} > 1">
+				<f:comment><!-- Add Pagination --></f:comment>
+				<div class="js__img-slider__pagination img-slider__pagination swiper-pagination"></div>
+				<f:comment><!-- Navigation --></f:comment>
+				<div class="js__img-slider__btn-next img-slider__btn-next swiper-button-next"></div>
+				<div class="js__img-slider__btn-prev img-slider__btn-prev swiper-button-prev"></div>
+			</f:if>
+		</div>
+	</f:if>
   <!-- theme_t3kit: Templates/ContentElements/Slider.html [end] -->
 </f:section>
 
