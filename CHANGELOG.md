@@ -1,5 +1,5 @@
 
-#### v8.9.3 `May 28, 2019`
+##### v8.9.3 `May 28, 2019`
 
 - **[TASK]** update theme_t3kit to v2.10.3 ([f117966](https://github.com/t3kit/t3kit/commit/f117966))
 - **[TASK]** remove unneeded dependencies ([c55fd50](https://github.com/t3kit/t3kit/commit/c55fd50))
